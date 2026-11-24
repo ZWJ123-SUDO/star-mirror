@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#10151f"><title>星环魔法镜 · Star Mirror AR</title>
+  <link rel="icon" href="data:,"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header><div class="brand"><span class="mark">✧</span><div>STAR MIRROR<small>星环魔法镜 / INTERACTIVE AR</small></div></div><span id="modeTag" class="tag">等待开启</span></header>
+    <section class="stage" id="stage" aria-label="AR 摄像头与特效画面">
+      <video id="camera" autoplay playsinline muted></video><canvas id="effects"></canvas>
+      <div class="stage-top"><span class="live"><i></i><span id="liveText">CAMERA OFF</span></span><span id="fps">手势 × 表情</span></div>
+      <div class="welcome" id="welcome"><span class="eyebrow">YOUR EXPRESSION, YOUR UNIVERSE</span><h1>把星光<br>握在手里。</h1><p>伸出手，唤醒星环。<br>用一个微笑，为宇宙换色。</p><div class="orb">✦</div></div>
+      <div class="meters"><div><span id="handLabel">等待手部</span><div class="track"><b id="handMeter"></b></div></div><div><span id="faceLabel">等待面部</span><div class="track"><b id="faceMeter"></b></div></div></div>
+      <div class="caption" id="caption" role="status" aria-live="polite">点击下方按钮，开启你的魔法镜</div>
+    </section>
+    <section class="controls"><button id="start" class="primary">开启摄像头 AR <span>↗</span></button><button id="demo">体验演示</button><button id="stop" disabled>关闭</button></section>
+    <section class="guide"><div><span>01 / HAND</span><strong>张手聚星</strong><p>手掌移动带动星环<br>张开变大，收拢变小</p></div><div><span>02 / SMILE</span><strong>微笑换色</strong><p>微笑染成粉金色<br>放松恢复冰蓝色</p></div><div><span>03 / MOUTH</span><strong>张嘴释放</strong><p>嘴边绽放星光<br>头部移动，光冠跟随</p></div></section>
+    <details><summary>使用提示与运行说明</summary><p>前置摄像头适合同时拍到脸和手；把手放在脸侧，保持光线充足。首次加载模型可能需要等待，低性能模式会降低识别频率。演示模式使用模拟数据，仅供查看效果。</p><label><input id="skeleton" type="checkbox" checked> 显示手部骨架</label><label><input id="lowPower" type="checkbox" checked> 手机省电模式</label><p>摄像头画面由本网页在设备内处理，本网页不录制或上传画面。关闭后会停止摄像头。需要 HTTPS 或电脑 localhost；不能直接双击 HTML 使用。</p></details>
+    <footer>HAND + FACE TRACKING · MEDIAPIPE × CANVAS 2D</footer>
+  </main><script type="module" src="app.js"></script>
+</body></html>
